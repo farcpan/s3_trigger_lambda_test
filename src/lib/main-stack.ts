@@ -28,7 +28,7 @@ export class MainStack extends Stack {
         entry: path,
         runtime: Runtime.NODEJS_20_X,
         timeout: Duration.seconds(60),
-        reservedConcurrentExecutions: 1, // 同時実行数=1
+        reservedConcurrentExecutions: 2, // Lambda関数同時実行数
         logRetention: RetentionDays.ONE_DAY, // ログは最大1日保持
         tracing: Tracing.ACTIVE, // X-ray
       }

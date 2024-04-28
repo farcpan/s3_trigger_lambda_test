@@ -1,5 +1,7 @@
 # s3_trigger_lambda_test
 
+Lambdaの同時実行数とLambda内の処理時間（wait時間）を変更した場合のログを以下に示す。
+
 ---
 
 ## 同時実行数=1, Lambda内wait時間=3 sec
@@ -33,6 +35,26 @@
 2024-04-28T07:33:29.792Z	5fab7c90-b125-4768-86c6-53b5fd279202	INFO	s3-trigger-lambda-test-image/010.png
 2024-04-28T07:33:39.857Z	5000f2c5-2ddb-46b3-b7c6-aafae3bfc4c2	INFO	s3-trigger-lambda-test-image/002.png
 2024-04-28T07:33:55.800Z	8c48ec1a-fd98-4bf8-bf85-b7f561139902	INFO	s3-trigger-lambda-test-image/003.png
+```
+
+---
+
+## 同時実行数=2, Lambda内wait時間=30 sec
+
+```
+2024-04-28T11:13:54.642Z	85d59d1f-96ec-4a1f-8e1c-a4dae71158a7	INFO	s3-trigger-lambda-test-image/001.png
+2024-04-28T11:14:27.985Z	417908d1-1fe1-490a-9faf-16cda2b38689	INFO	s3-trigger-lambda-test-image/007.png
+2024-04-28T11:15:00.066Z	3b14d8b9-3984-47c1-a3f4-f3ddea910b69	INFO	s3-trigger-lambda-test-image/009.png
+2024-04-28T11:16:04.262Z	35bc50fe-9814-4010-abe1-95e30c407c71	INFO	s3-trigger-lambda-test-image/005.png
+2024-04-28T11:18:04.496Z	20538fd2-6368-46da-9f0a-8a1b9218a207	INFO	s3-trigger-lambda-test-image/008.png
+```
+
+```
+2024-04-28T11:13:54.638Z	09810112-31a6-48d6-a04b-5025fa847011	INFO	s3-trigger-lambda-test-image/006.png
+2024-04-28T11:14:24.911Z	ac78caaf-7ecc-4ecb-8b60-54cdd9f9609a	INFO	s3-trigger-lambda-test-image/002.png
+2024-04-28T11:15:01.181Z	34ea3149-2796-4ff3-b364-936dfba40b1b	INFO	s3-trigger-lambda-test-image/003.png
+2024-04-28T11:16:01.284Z	ee4ceda9-b50d-4e9c-b72f-d00b44de4545	INFO	s3-trigger-lambda-test-image/004.png
+2024-04-28T11:18:26.247Z	ea44a1a8-fdf3-4911-989e-2bcf7d455ce8	INFO	s3-trigger-lambda-test-image/010.png
 ```
 
 ---

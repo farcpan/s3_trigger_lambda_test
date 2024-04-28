@@ -3,7 +3,7 @@ export const handler = async (event: any, context: any) => {
   const bucketName = s3Info.bucket.name;
   const objectKey = s3Info.object.key;
 
-  await sleep(3000);
+  await sleep(30 * 1000);
   console.info(`${bucketName}/${objectKey}`);
   return {
     statusCode: 200,
